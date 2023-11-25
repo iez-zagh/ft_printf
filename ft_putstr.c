@@ -6,17 +6,19 @@
 /*   By: iez-zagh <iez-zagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 05:04:06 by iez-zagh          #+#    #+#             */
-/*   Updated: 2023/11/21 03:40:28 by iez-zagh         ###   ########.fr       */
+/*   Updated: 2023/11/22 10:32:09 by iez-zagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr1(const char *str, int *len)
+void	ft_putstr(const char *s, int *len)
 {
-	while (*str)
+	if (s == NULL)
+		ft_putstr("(null)", len);
+	while (s && *s)
 	{
-		ft_putchar1(*str, len);
-		str++;
+		ft_putchar(*s, len);
+		s++;
 	}
 }
